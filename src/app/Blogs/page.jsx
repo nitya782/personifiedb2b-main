@@ -180,7 +180,7 @@ function BlogCard({ post, index, hoveredCard, setHoveredCard }) {
         ref={heroRef}
         className="relative min-h-screen flex items-center overflow-hidden mt-40"
         style={{
-          background: `radial-gradient(ellipse at top, #064e3b 0%, #065f46 30%, #047857 100%)`
+          background: `radial-gradient(ellipse at top, #0E1F1C 0%, #0E1F1C 30%, #0E1F1C 100%)`
         }}
       >
         {/* Dynamic Background Pattern */}
@@ -402,8 +402,8 @@ function BlogCard({ post, index, hoveredCard, setHoveredCard }) {
 
             {/* Load More */}
             <div className="text-center">
-              <button className="group relative px-12 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              <button className="group relative px-12 py-6 bg-gradient-to-r from-[#0E1F1C] to-[#0E1F1C] text-white font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0E1F1C] to-[#0E1F1C] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 <div className="relative flex items-center gap-3">
                   <span className="text-lg">Load More Stories</span>
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-180 transition-transform duration-500">
