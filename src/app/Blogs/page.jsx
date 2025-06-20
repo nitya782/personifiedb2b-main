@@ -3,6 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
 
+import Lownav from "../../components/Lownav";
+import Upnav from "../../components/Upnav";
+import Footer from "../../components/Footer";
+
 export default function BlogLayout() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -169,10 +173,12 @@ function BlogCard({ post, index, hoveredCard, setHoveredCard }) {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <Upnav/>
+      <Lownav/>
       {/* Redesigned Hero Section */}
       <div 
         ref={heroRef}
-        className="relative min-h-screen flex items-center overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden mt-40"
         style={{
           background: `radial-gradient(ellipse at top, #064e3b 0%, #065f46 30%, #047857 100%)`
         }}
@@ -473,6 +479,7 @@ function BlogCard({ post, index, hoveredCard, setHoveredCard }) {
           overflow: hidden;
         }
       `}</style>
+    <Footer/>
     </div>
   );
 }
@@ -611,4 +618,154 @@ function NewsletterCard({ email, setEmail, isSubscribed, setIsSubscribed, isLoad
   );
 }
 
+// "use client"
+// import { useState, useEffect, useRef } from 'react';
+// import Link from "next/link";
 
+// export default function BlogLayout() {
+//   const [email, setEmail] = useState('');
+//   const [isSubscribed, setIsSubscribed] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [error, setError] = useState('');
+//   const [activeCategory, setActiveCategory] = useState('All');
+//   const [hoveredCard, setHoveredCard] = useState(null);
+//   const heroRef = useRef(null);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setIsLoading(true);
+//     setError('');
+    
+//     // Simulate API call
+//     setTimeout(() => {
+//       setIsSubscribed(true);
+//       setEmail('');
+//       setIsLoading(false);
+//     }, 1500);
+//   };
+
+//   const blogPosts = [
+//     {
+//       id: 1,
+//       title: "How Comparison Quotes, Reviews, and Articles Help a Tech Buyer's Journey",
+//       date: "April, 2025",
+//       readTime: "5 min read",
+//       category: "MarTech",
+//       imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+//       slug: "/Blogs/buyers-content-help",
+//       views: 324,
+//       likes: 89,
+//       excerpt: "Discover how strategic content guides buyers through their decision-making process in the tech industry."
+//     },
+//     {
+//       id: 2,
+//       title: "Tech Buyer And Its Decision Making Journey",
+//       date: "May 12, 2025",
+//       readTime: "7 min read",
+//       category: "Business",
+//       imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
+//       slug: "/Blogs/buyer-journey",
+//       views: 456,
+//       likes: 123,
+//       excerpt: "Understanding the complex journey of tech buyers and how to optimize their experience."
+//     },
+//     {
+//       id: 3,
+//       title: "AI in HR & Payroll: How AI is reshaping HR & Payroll in 2025",
+//       date: "June 1, 2025",
+//       readTime: "5 min read",
+//       category: "AI",
+//       imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+//       slug: "/Blogs/AI-in-HR-Payroll",
+//       views: 678,
+//       likes: 234,
+//       excerpt: "Explore how artificial intelligence is transforming human resources and payroll management."
+//     },
+//     {
+//       id: 4,
+//       title: "VoIP vs. Traditional Phone: What's Right for Your Business?",
+//       date: "June 2, 2025",
+//       readTime: "5 min read",
+//       category: "Technology",
+//       imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+//       slug: "/Blogs/VoIP",
+//       views: 289,
+//       likes: 67,
+//       excerpt: "Compare VoIP and traditional phone systems to find the best communication solution."
+//     },
+//     {
+//       id: 5,
+//       title: "Top 5 Things to Look for in a Fleet Management System in 2025",
+//       date: "June 3, 2025",
+//       readTime: "5 min read",
+//       category: "Technology",
+//       imageUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&h=400&fit=crop",
+//       slug: "/Blogs/fleet-management-system-2025",
+//       views: 345,
+//       likes: 78,
+//       excerpt: "Essential features to consider when choosing a fleet management system for your business."
+//     },
+//     {
+//       id: 6,
+//       title: "Salesforce vs. HubSpot vs. Zoho: Which CRM Is Best for You?",
+//       date: "June 4, 2025",
+//       readTime: "5 min read",
+//       category: "Business",
+//       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+//       slug: "/Blogs/salesforce-vs-hubspot-vs-zoho",
+//       views: 567,
+//       likes: 145,
+//       excerpt: "Comprehensive comparison of three leading CRM platforms to help you make the right choice."
+//     }
+//   ];
+
+//   const categories = ['All', 'AI', 'MarTech', 'Business', 'Technology', 'Security'];
+
+//   return (
+//     <div className="min-h-screen bg-slate-50">
+//       {/* Hero Section */}
+//       <div ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-green-700 to-green-500">
+//         <div className="container mx-auto text-center">
+//           <h1 className="text-5xl font-bold text-white">Unlock Tomorrow's Tech</h1>
+//           <p className="text-xl text-white mt-4">Dive deep into the future of technology with expert insights.</p>
+//           <button className="mt-6 px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500">Explore Articles</button>
+//         </div>
+//       </div>
+
+//       {/* Blog Section */}
+//       <div className="py-24 bg-white">
+//         <div className="container mx-auto">
+//           <h2 className="text-4xl text-center mb-8">Latest Insights</h2>
+//           <div className="flex justify-center mb-6">
+//             {categories.map((category) => (
+//               <button key={category} onClick={() => setActiveCategory(category)} className={`px-4 py-2 rounded-full ${activeCategory === category ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'}`}>
+//                 {category}
+//               </button>
+//             ))}
+//           </div>
+//           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+//             {blogPosts.map((post, index) => (
+//               <Link key={post.id} href={post.slug}>
+//                 <div className={`p-4 border rounded-lg shadow-lg transition-transform ${hoveredCard === index ? 'scale-105' : ''}`} onMouseEnter={() => setHoveredCard(index)} onMouseLeave={() => setHoveredCard(null)}>
+//                   <img src={post.imageUrl} alt={post.title} className="w-full h-40 object-cover rounded-t-lg" />
+//                   <h3 className="text-lg font-bold mt-2">{post.title}</h3>
+//                   <p className="text-sm text-gray-600">{post.excerpt}</p>
+//                 </div>
+//               </Link>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Newsletter Card */}
+//       <div className="bg-gray-100 p-8">
+//         <h3 className="text-2xl text-center mb-4">Stay Ahead</h3>
+//         <form onSubmit={handleSubmit} className="flex justify-center">
+//           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="p-2 rounded-l-lg border" required />
+//           <button type="submit" className="bg-green-500 text-white p-2 rounded-r-lg">Subscribe</button>
+//         </form>
+//         {isSubscribed && <p className="text-green-600 text-center mt-2">You're subscribed!</p>}
+//       </div>
+//     </div>
+//   );
+// }
