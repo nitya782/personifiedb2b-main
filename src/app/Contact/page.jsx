@@ -7,9 +7,6 @@ import Image from "next/image"; // For image optimization
 import Link from "next/link";   // For client-side navigation
 
 // Assuming these are also client components or simple static components
-import Upnav from "../../components/Upnav";
-import Lownav from "../../components/Lownav";
-import Footer from "../../components/Footer";
 import FAQ from '../../components/FAQ'; // Ensure FAQ component is also 'use client' if it uses hooks
 
 const Contact = () => {
@@ -156,8 +153,6 @@ const Contact = () => {
 
     return (
         <div style={{ background: "#0E1F1C", minHeight: "100vh" }}>
-            <Upnav />
-            <Lownav />
             {/* Hero Section */}
             <section className="bg-[#356e62] py-16 px-4 text-white text-center mt-[150px]">
                 <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
@@ -498,7 +493,6 @@ const Contact = () => {
                     Get Started Today
                 </Link>
             </section>
-            <Footer />
         </div>
     );
 };

@@ -1,9 +1,6 @@
 "use client"; 
 import { motion } from "framer-motion";
 import { ArrowUpRight , Plus} from "lucide-react";
-import Lownav from "../../components/Lownav";
-import Upnav from "../../components/Upnav";
-import Footer from "../../components/Footer";
 import { useState } from "react";
 import Image from "next/image"; // Import Next.js Image component
 import Link from 'next/link';
@@ -65,9 +62,6 @@ function SalesDevelopment() {
 
   return (
     <>
-      <Upnav />
-      <Lownav />
-
       {/* Hero Section */}
       <div
         className="relative w-full min-h-screen mt-24 bg-cover bg-center flex items-center justify-start px-6 sm:px-8 md:px-16 lg:px-32"
@@ -423,7 +417,6 @@ function SalesDevelopment() {
         </motion.div>
       </div>
 
-      <Footer />
     </>
   );
 }

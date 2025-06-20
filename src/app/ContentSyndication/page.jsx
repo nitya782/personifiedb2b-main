@@ -1,9 +1,6 @@
 "use client"; // <
  import { motion } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
-import Lownav from "../../components/Lownav"; // Adjust path if necessary
-import Upnav from "../../components/Upnav";   // Adjust path if necessary
-import Footer from "../../components/Footer"; // Adjust path if necessary
 import { useState } from "react";
 import Head from 'next/head'; // Import Head for SEO
 
@@ -68,8 +65,6 @@ function B2BcontentSyndication() {
         {/* Add more meta tags as needed for SEO */}
       </Head>
 
-      <Upnav />
-      <Lownav />
 
       {/* Hero Section */}
       <div
@@ -416,7 +411,6 @@ function B2BcontentSyndication() {
         </motion.div>
       </div>
 
-      <Footer />
     </>
   );
 }

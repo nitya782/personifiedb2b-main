@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image"; // Import Image component from next/image
 import Link from "next/link"; // Import Link component from next/link
 
-import Upnav from "../../components/Upnav";
-import Lownav from "../../components/Lownav";
-import Footer from "../../components/Footer";
 
 const Finance = () => {
   const [email, setEmail] = useState("");
@@ -361,8 +358,6 @@ const Finance = () => {
   return (
     <>
       {/* Assuming Upnav and Lownav are also client components or can be server components */}
-      <Upnav />
-      <Lownav />
       <div className="font-sans mt-36">
         {/* Hero Section */}
         <motion.section
@@ -903,7 +898,6 @@ const Finance = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

@@ -4,9 +4,6 @@ import { useState } from "react";
 import Image from "next/image"; // Import Next.js Image component for optimization
 import Link from "next/link"; // Import Next.js Link component for navigation
 import { motion } from "framer-motion";
-import Lownav from "../../components/Lownav";
-import Upnav from "../../components/Upnav";
-import Footer from "../../components/Footer";
 
 const It = () => {
   const [email, setEmail] = useState("");
@@ -273,8 +270,6 @@ const It = () => {
 
   return (
     <>
-      <Upnav />
-      <Lownav />
       <div className="font-sans mt-36">
         {/* Hero Section */}
         <motion.section
@@ -782,7 +777,6 @@ const It = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

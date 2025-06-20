@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
-import Lownav from "../../components/Lownav";
-import Upnav from "../../components/Upnav";
-import Footer from "../../components/Footer";
 
 const Marketing = () => {
   const [email, setEmail] = useState("");
@@ -285,8 +282,6 @@ const Marketing = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <Upnav />
-      <Lownav />
       <div className="font-sans mt-36">
         {/* Hero Section */}
         <motion.section
@@ -785,7 +780,6 @@ const Marketing = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

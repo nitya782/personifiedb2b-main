@@ -5,9 +5,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image"; // Import the Image component
 import Link from "next/link"; // Import the Link component
-import Lownav from "../../components/Lownav";
-import Upnav from "../../components/Upnav";
-import Footer from "../../components/Footer";
 
 const Sales = () => {
   const [email, setEmail] = useState("");
@@ -285,8 +282,7 @@ const Sales = () => {
 
   return (
     <>
-      <Upnav />
-      <Lownav />
+
       <div className="font-sans mt-36">
         {/* Hero Section */}
         <motion.section
@@ -788,7 +784,6 @@ const Sales = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

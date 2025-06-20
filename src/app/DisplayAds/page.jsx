@@ -5,9 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Lownav from "../../components/Lownav";
-import Upnav from "../../components/Upnav";
-import Footer from "../../components/Footer";
 
 function DisplayAds() {
   const cardVariants = {
@@ -37,9 +34,6 @@ function DisplayAds() {
 
   return (
     <>
-      <Upnav />
-      <Lownav />
-
       {/* Hero Section */}
       <div
         className="relative w-full h-screen mt-36 bg-cover bg-center flex items-center justify-start px-8 md:px-16 lg:px-32"
@@ -276,7 +270,6 @@ function DisplayAds() {
         </motion.div>
       </div>
 
-      <Footer />
     </>
   );
 }

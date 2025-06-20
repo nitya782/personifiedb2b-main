@@ -13,9 +13,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 // Dynamically import the components
-const Upnav = dynamic(() => import("../../components/Upnav"), { ssr: false });
-const Lownav = dynamic(() => import("../../components/Lownav"), { ssr: false });
-const Footer = dynamic(() => import("../../components/Footer"), { ssr: false });
+
 const LazyLogoscroll = dynamic(() => import("../../components/LogoScroll"), { ssr: false }); // If you uncomment this later
 const LazyHowItWork = dynamic(() => import("../../components/HowItWork"), { ssr: false });
 const LazyProjectStatsComponent = dynamic(() => import("../../components/ProjectStatsComponent"), { ssr: false });
@@ -101,8 +99,6 @@ const About = () => {
         <meta property="og:site_name" content="PersonifiedB2B" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Upnav />
-      <Lownav />
 
       {/* Hero Section */}
       <div className="relative w-full h-[300px] mt-[100px] sm:mt-[120px] md:mt-[144px] bg-gradient-to-r from-[#302600] via-[#121b1a] to-[#08231f] flex flex-col items-center justify-center text-white overflow-hidden">
@@ -359,7 +355,6 @@ const About = () => {
     </section>
 
 
-      <Footer />
     </>
   );
 };
